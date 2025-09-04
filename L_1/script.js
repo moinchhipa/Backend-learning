@@ -1,5 +1,3 @@
-let n = 5;
+import { sum, PI } from "./math.js";
 
-for (let i = 0; i <= n; i++) {
-  console.log("hello", i);
-}
+console.log(PI);
