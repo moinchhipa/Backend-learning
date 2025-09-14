@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweets Feed</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Twitter posts</h1>
+    <a href="http://localhost:8080/tweets/new">Post New Tweet</a>
+    <% for(post of posts) { %>
+        <div class="post">
+            <h3>Username: @<%= post.username %></h3>
+            <h4>Tweet: <%= post.tweet%></h4>
+            <br>
+            <a href="http://localhost:8080/tweets/<%=post.id%>">Tweet Details</a>
+            <a href="http://localhost:8080/tweets/<%=post.id%>/edit">Edit Tweet</a>
+            <form action="/tweets/<%=post.id%>?_method=DELETE" method="post" class="delete-form">
+                <button>Delete Tweet</button>
+            </form>
+        </div>
+    <% } %>
+</body>
+</html>
